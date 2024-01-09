@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Quiz {% endblock title %}Home page
+
+{% block body %}
+<div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="collapse navbar-collapse" id="navcol-1">
+        </div>
+</div>
+</nav>
+</div>
+<div class="article-clean">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                <div class="intro">
+                    <h1 class="text-center" style="font-family:ABeeZee, sans-serif;">RESULT</h1>
+                    <!-- <p class="text-center"> <a href="#" style="font-size:18px;font-family:ABeeZee, sans-serif;">Kaggle Problem</a></p> -->
+                </div>
+                <div class="text">
+                    <h2>Data Frame</h2>
+
+                    <div class="container-fluid" style="overflow-x:auto;">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>_</th>
+                                    <th>________________Question________________</th>
+                                    <th>________________Answer________________</th>
+                                    <th>user_answer</th>
+                                    <th>real_cosine</th>
+                                    <th>Cosine_70</th>
+                                    <th>keyword_match</th>
+                                    <th>result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if d %}
+
+                                {% for i in d %}
+                                <tr>
+                                    <td>{{"-"}}</td>
+                                    <td>{{i.Question}}</td>
+                                    <td>{{i.Answer}}</td>
+                                    <td>{{i.user_answer}}</td>
+                                    <td>{{i.real_cosine}}</td>
+                                    <td>{{i.Cosine}}</td>
+                                    <td>{{i.keyword_match}}</td>
+                                    <td>{{i.result}}</td>
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <p><br><br><br></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-center" style="font-family:ABeeZee, sans-serif;">Result : {{result}}</h1>
+                    <figure></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

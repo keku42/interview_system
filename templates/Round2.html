@@ -1,0 +1,48 @@
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Assistant</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="{% static 'style1.css' %}" rel="stylesheet" />
+  <!-- <script  src="{% static './app.js' %}" ></script> -->
+  <div class="container-fluid">
+    <h1>hy</h1>
+  </div>
+  
+
+</head>
+
+<body>
+  <div id="top-container">
+    <h1 id="title">Voice Assistant</h1>
+    <button id="start-btn" class="simple-btn">Start Assistant</button>
+  </div>
+
+  <div id="visualizer-container">
+    <canvas id="output" width="250" height="200"></canvas>
+    <h2 id="word-preview"></h2>
+    <h3 id="search-result"></h3>
+  </div>
+  <script>startButton.onclick = async () => {
+    if (!isStarted) {
+      startButton.innerText = "Starting...";
+      isStarted = true;
+      startButton.innerText = "Stop Assistant";
+    } else {
+      startButton.innerText = "Stopping...";
+      isStarted = false;
+      startButton.innerText = "Start Assistant";
+    }
+  };</script>
+</body>
+
+</html>
